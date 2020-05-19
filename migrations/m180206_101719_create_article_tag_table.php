@@ -18,43 +18,6 @@ class m180206_101719_create_article_tag_table extends Migration
             'tag_id' => $this->integer(),
         ]);
         
-        //create index for column 'user_id'
-        
-        $this->createIndex(
-            'idx-post-user_id',
-            'comment',
-            'article_id'
-        );
-        
-        // add foregin key for table 'user'
-        
-        $this->addForeginKey(
-            'fk-post-user_id',
-            'comment',
-            'article_id',
-            'article',
-            'id',
-            'CASCADE'
-        );
-        
-        //create index for table 'article_id'
-        
-        $this->createIndex(
-            'idx-article_id',
-            'comment',
-            'article_id'
-        );
-        
-        // add foregin key for table 'article'
-        
-        $this->addForeginKey(
-            'fk-article_id',
-            'comment',
-            'article_id',
-            'article',
-            'id',
-            'CASCADE'
-        );
     }
 
     /**

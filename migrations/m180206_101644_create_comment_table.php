@@ -18,6 +18,7 @@ class m180206_101644_create_comment_table extends Migration
             'user_id' => $this->integer(),
             'article_id' => $this->integer(),
             'status' => $this->integer(),
+            'date' => $this->date(),
         ]);
         
         //create index for column 'user_id'
@@ -30,7 +31,7 @@ class m180206_101644_create_comment_table extends Migration
         
         // add foregin key for table 'user'
         
-        $this->addForeginKey(
+        $this->addForeignKey(
             'fk-post-user_id',
             'comment',
             'article_id',
@@ -49,7 +50,7 @@ class m180206_101644_create_comment_table extends Migration
         
         // add foregin key for table 'article'
         
-        $this->addForeginKey(
+        $this->addForeignKey(
             'fk-article_id',
             'comment',
             'article_id',
